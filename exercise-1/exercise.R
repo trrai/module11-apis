@@ -2,9 +2,13 @@
 
 # Load the httr and jsonlite libraries for accessing data
 
+library("jsonlite")
+library("httr")
 
 ## For these questions, look at the API documentation to identify the appropriate endpoint and information.
 ## Then send GET() request to fetch the data, then extract the answer to the question
+received<-GET("http://data.unhcr.org/api/countries/list.json")
+data<-content(received, "text")
 
 # For what years does the API have statistical data?
 
